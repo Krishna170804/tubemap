@@ -17,8 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from location.views import home
-from django.conf.urls import url
-
 from route.views import result
 
 
@@ -27,10 +25,10 @@ admin.site.site_title = 'Krishna Project'
 admin.site.index_title = 'Home'
 admin.site.site_url = "https://www.shortest-route.in/"
 
+
+# URL creation to call out the functions in browser
 urlpatterns = [
-    path('admin/', admin.site.urls), 
-    # path('<str:lat1>,<str:long1>,<str:lat2>,<str:long2>',showroute,name='showroute'),
-    # url(r'^showmap/$',showmap,name='showmap'),
-    url(r'^result/$',result,name='result'),
-    url(r'^$',home,name='home'),
+    path('admin/', admin.site.urls),
+    path('result',result,name='result'),
+    path('home',home,name='home'),
     ]

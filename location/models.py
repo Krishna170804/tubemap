@@ -1,7 +1,8 @@
 from django.db import models
 
 # Create your models here.
-
+# Database is created here using the concept of inheritance.
+# Uses inheritance to get attributes and methods from Model function to Location
 
 class Location(models.Model):
     start_point = models.CharField("Start Point", max_length=100)
